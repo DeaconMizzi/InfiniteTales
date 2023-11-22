@@ -31,14 +31,14 @@
                         <a class="nav-link" href="books.php">Books</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Blog</a>
+                        <a class="nav-link" href="blog.php">Blog</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         About Us</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">FAQ</a>
-                        <a class="dropdown-item" href="#">Contact Us</a>
+                        <a class="dropdown-item" href="FAQ.php">FAQ</a>
+                        <a class="dropdown-item" href="contact.php">Contact Us</a>
                     </div>
                     </li>
 
