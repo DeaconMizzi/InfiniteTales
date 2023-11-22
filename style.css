@@ -1,0 +1,105 @@
+@media screen and (max-width: 600px) {
+    :root {
+      --header-height: 100px;
+      --header-height-min: 80px;
+    }
+  }
+  
+  /* Theme Colors */
+  :root {
+    --accent-color: #C5A992;
+    --secondary-color: #C5A992;
+    --dark-color: #2f2f2f;
+    --light-color: #F3F2EC;
+    --body-text-color: #2f2f2f;
+    --light-text-color: #afafaf;
+    --dark-text-color: #2f2f2f;
+  }
+
+  :root,
+[data-bs-theme=light] {
+  --heading-font: "Prata", Georgia, serif;
+  --heading-font-weight: 400;
+  --heading-color: var(--bs-dark);
+  --heading-line-height: 1.1;
+
+  --swiper-theme-color: var(--bs-primary);
+
+  --custom-easing: cubic-bezier(.17, .67, .83, .67);
+
+  /* theme colors */
+  --bs-body-font-size: 0.9rem;
+  --bs-body-font-weight: 400;
+  --bs-body-line-height: 1.7;
+  --bs-body-color: #333;
+  --bs-body-color-rgb: 51, 51, 51;
+
+  --bs-primary: #C5A992;
+  --bs-primary-dark: #C5A992;
+  --bs-secondary: #C5A992;
+  --bs-black: #111;
+  --bs-light: #F1F1F0;
+  --bs-dark: #212529;
+  --bs-gray: #949494;
+  --bs-gray-dark: #51565b;
+
+  --bs-primary-rgb: 169, 128, 115;
+  --bs-secondary-rgb: 253, 238, 233;
+  --bs-black-rgb: 17, 17, 17;
+  --bs-light-rgb: 241, 241, 240;
+  --bs-dark-rgb: 33, 37, 41;
+
+  --bs-link-color: var(--bs-dark);
+  --bs-link-color-rgb: 17, 17, 17;
+  --bs-link-decoration: underline;
+  --bs-link-hover-color: var(--bs-primary);
+  --bs-link-hover-color-rgb: 169, 128, 115;
+}
+nav{
+  background-color: #C5A992;
+}
+nav .menu-list a {
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+  }
+  
+nav .menu-list a.active {
+    color: var(--accent-color);
+  }
+
+body {
+    font-size: 16px;
+    line-height: 2;
+    background-color: var(--bs-primary);
+  }
+
+  section#hero {
+    background-image: url('hero.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 50px;
+    color: #fff;
+  }
+  
+  section#books {
+    padding: 50px;
+  }
+  
+  .book-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .book {
+    width: 30%;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .book img {
+    width: 50%;
+  }
+  
