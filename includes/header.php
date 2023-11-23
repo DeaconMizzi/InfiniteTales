@@ -31,7 +31,7 @@
                         <a class="nav-link" href="books.php">Books</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="blog.php">Blog</a>
+                        <a class="nav-link" href="comingsoon.php">Coming Soon</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -49,11 +49,8 @@
 
         <!-- Right Section -->
         <div class="d-flex align-items-center">
-            <a class="navbar-brand" href="index.php"><img src="img\cart.png" alt="Logo" width="40" height="50"></a>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+            <a class="navbar-brand" href="cart.php"><img src="img\user.png" alt="Logo" width="50" height="50"></a>
+            <a class="navbar-brand" href="cart.php"><img src="img\cart.png" alt="Logo" width="40" height="50"></a>
         </div>
     </div>
 </nav>
