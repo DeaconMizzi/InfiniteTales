@@ -49,7 +49,17 @@
 
         <!-- Right Section -->
         <div class="d-flex align-items-center">
-            <a class="navbar-brand" href="cart.php"><img src="img\user.png" alt="Logo" width="50" height="50"></a>
+            <ul class="nav-item dropdown" style = "padding-top:12px; padding-right:10px">
+                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 <img src="img\user.png" alt="Logo" width="50" height="50"></a>
+                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                 <a class="dropdown-item" href="signup.php">Sign Up</a>
+                 <a class="dropdown-item" href="signin.php">Sign In</a>
+                 <a class="dropdown-item" href="user.php">My Profile</a>
+                 <a class="dropdown-item" href="orders.php">My Orders</a>
+                 </div>
+            </ul>
+            <a class="navbar-brand" href="wish.php"><img src="img\wish.png" alt="Logo" width="50" height="50"></a>
             <a class="navbar-brand" href="cart.php"><img src="img\cart.png" alt="Logo" width="40" height="50"></a>
         </div>
     </div>

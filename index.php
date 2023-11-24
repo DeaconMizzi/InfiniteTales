@@ -1,7 +1,7 @@
 <?php
     include 'includes/header.php';
 ?>
-
+<br><br>
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
@@ -24,7 +24,7 @@
   </a>
 </div>
 
-
+<br><br><br>
 <?php
     include 'includes/footer.php';
 ?>

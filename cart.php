@@ -196,7 +196,7 @@
     </div>
   </div>
 </section>
-
+<br>
 <?php
     include 'includes/footer.php';
 ?>

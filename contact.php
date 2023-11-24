@@ -9,14 +9,14 @@
 
     <!-- Name input -->
     <div class="mb-3">
-      <label class="form-label" for="name" style="color:white">Name</label>
+      <label class="form-label" for="name">Name</label>
       <input class="form-control" id="name" type="text" placeholder="Name" data-sb-validations="required" />
       <div class="invalid-feedback" data-sb-feedback="name:required">Name is required.</div>
     </div>
 
     <!-- Email address input -->
     <div class="mb-3">
-      <label class="form-label" for="emailAddress" style="color:white">Email Address</label>
+      <label class="form-label" for="emailAddress">Email Address</label>
       <input class="form-control" id="emailAddress" type="email" placeholder="Email Address" data-sb-validations="required, email" />
       <div class="invalid-feedback" data-sb-feedback="emailAddress:required">Email Address is required.</div>
       <div class="invalid-feedback" data-sb-feedback="emailAddress:email">Email Address Email is not valid.</div>
@@ -24,7 +24,7 @@
 
     <!-- Message input -->
     <div class="mb-3">
-      <label class="form-label" for="message"style="color:white">Message</label>
+      <label class="form-label" for="message">Message</label>
       <textarea class="form-control" id="message" type="text" placeholder="Message" style="height: 10rem;" data-sb-validations="required"></textarea>
       <div class="invalid-feedback" data-sb-feedback="message:required">Message is required.</div>
     </div>
@@ -41,7 +41,7 @@
 
     <!-- Form submit button -->
     <div class="d-grid">
-      <button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit</button>
+      <button class="btn btn-primary btn-lg" id="submitButton" type="submit">Submit</button>
     </div>
 
   </form>
