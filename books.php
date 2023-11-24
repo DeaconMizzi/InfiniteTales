@@ -6,7 +6,7 @@
     <br>
     <div class="book-list">
       <div class="card" style="width: 20rem;">
-      <img src="img\mp.jpg" class="card-img-top" alt="... " style = "height:30rem;">
+      <a class="nav-link" href="content.php"><img src="img\mp.jpg" class="card-img-top" alt="... " style = "height:30rem;"></a>
       <div class="card-body" style="text-align:center">
         <h5 class="card-title">Friends, Lovers and the Big Terrible Thing: ''Funny, fascinating and compelling'' The Times</h5>
         <p class="card-text">The beloved star of Friends takes us behind the scenes of the hit sitcom and his struggles with addiction in this candid, funny, and revelatory memoir that delivers a powerful message of hope and persistence.</p>
@@ -95,7 +95,7 @@
     <br>
     <div class="book-list">
       <div class="card" style="width: 20rem;">
-      <img src="img\mp.jpg" class="card-img-top" alt="... " style = "height:30rem;">
+      <a class="nav-link" href="content.php"><img src="img\mp.jpg" class="card-img-top" alt="... " style = "height:30rem;"></a>
       <div class="card-body" style="text-align:center">
         <h5 class="card-title">Friends, Lovers and the Big Terrible Thing: ''Funny, fascinating and compelling'' The Times</h5>
         <p class="card-text">The beloved star of Friends takes us behind the scenes of the hit sitcom and his struggles with addiction in this candid, funny, and revelatory memoir that delivers a powerful message of hope and persistence.</p>

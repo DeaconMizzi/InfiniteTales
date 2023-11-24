@@ -182,6 +182,12 @@
 
                 <button type="button" class="btn btn-primary btn-block btn-lg">
                   <div class="d-flex justify-content-between">
+                    <span>Cancel </span>
+                  </div>
+                </button>
+
+                <button type="button" class="btn btn-primary btn-block btn-lg">
+                  <div class="d-flex justify-content-between">
                     <span>Checkout </span>
                   </div>
                 </button>
