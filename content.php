@@ -21,7 +21,9 @@
                     </p>
                     
                     <a href="#" class="btn btn-primary"><img src="img\wish.png" alt="Logo" width="20" height="20"></a>
-                     <a href="#" class="btn btn-primary">Add To Cart</a>
+                    <a href="review.php" class="btn btn-primary">Review</a>
+                    <a href="#" class="btn btn-primary">Add To Cart</a>
+
                                 
                 </div>
             </div>

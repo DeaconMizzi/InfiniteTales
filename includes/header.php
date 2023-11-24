@@ -7,6 +7,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="fontawesome.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
@@ -58,6 +60,7 @@
                  <a class="dropdown-item" href="signin.php">Sign In</a>
                  <a class="dropdown-item" href="user.php">My Profile</a>
                  <a class="dropdown-item" href="orders.php">My Orders</a>
+                 <a class="dropdown-item" href="admin.php">Admin</a>
                  </div>
             </ul>
             <a class="navbar-brand" href="wish.php"><img src="img\wish.png" alt="Logo" width="50" height="50"></a>
