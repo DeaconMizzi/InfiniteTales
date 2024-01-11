@@ -90,9 +90,9 @@ function displayBooks($db) {
     } else {
         echo "0 results";
     }
+}
 
     
-}
 
 function generateBookCard($row)
 {
