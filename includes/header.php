@@ -1,3 +1,4 @@
+<?php include('includes/server.php') ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +10,7 @@
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" href="fontawesome.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
 </head>
 <body>
 
@@ -44,8 +46,6 @@
                         <a class="dropdown-item" href="contact.php">Contact Us</a>
                     </div>
                     </li>
-
-                    <!-- Add more list items as needed -->
                 </ul>
             </div>
         </div>
@@ -56,11 +56,22 @@
                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                  <img src="img\user.png" alt="Logo" width="50" height="50"></a>
                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                 <a class="dropdown-item" href="signup.php">Sign Up</a>
-                 <a class="dropdown-item" href="signin.php">Sign In</a>
-                 <a class="dropdown-item" href="user.php">My Profile</a>
-                 <a class="dropdown-item" href="orders.php">My Orders</a>
-                 <a class="dropdown-item" href="admin.php">Admin</a>
+                    <?php
+                       if(!isset($_SESSION['username'])){
+                          echo '<a class="dropdown-item" href="signup.php">Sign Up</a>' .
+                          '<a class="dropdown-item" href="signin.php">Sign In</a>';  
+                       } 
+                       else if(isset($_SESSION['username'])) { 
+                            echo ' <a class="dropdown-item" href="user.php">My Profile</a>' .
+                            '<a class="dropdown-item" href="orders.php">My Orders</a>' .
+                            '<a class="dropdown-item" href="logout.php">Sign Out</a>';
+
+                            if($_SESSION['username'] === 'admin'){
+                            '<a class="dropdown-item" href="admin.php">Admin</a>';
+                            }
+                       }
+                    ?>
+                    
                  </div>
             </ul>
             <a class="navbar-brand" href="wish.php"><img src="img\wish.png" alt="Logo" width="50" height="50"></a>

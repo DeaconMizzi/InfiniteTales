@@ -5,21 +5,19 @@
     <h2 style="text-align:center;color: white;text-decoration:underline white;">Best Sellers</h2> 
     <br>
     <div class="book-list">
-      <div class="card" style="width: 20rem;">
-      <a class="nav-link" href="content.php"><img src="img\mp.jpg" class="card-img-top" alt="... " style = "height:30rem;"></a>
-      <div class="card-body" style="text-align:center">
-        <h5 class="card-title">Friends, Lovers and the Big Terrible Thing: ''Funny, fascinating and compelling'' The Times</h5>
-        <p class="card-text">The beloved star of Friends takes us behind the scenes of the hit sitcom and his struggles with addiction in this candid, funny, and revelatory memoir that delivers a powerful message of hope and persistence.</p>
-        <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star"></span>
-          <span class="fa fa-star"></span>
-          <br>
-        <a href="#" class="btn btn-primary"><img src="img\wish.png" alt="Logo" width="20" height="20"></a>
-        <a href="#" class="btn btn-primary">Add To Cart</a>
-      </div>
-      </div>
+          <?php
+            // Generate book cards
+            $sql = "SELECT * FROM book";
+            $result = mysqli_query($db, $sql);
+
+            if ($result && mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                    generateBookCard($row);
+                }
+            } else {
+                echo "No books available.";
+            }
+            ?>
       <div class="card" style="width: 20rem;">
       <img src="img\hp1.png" class="card-img-top" alt="..." style = "height:30rem;">
       <div class="card-body" style="text-align:center">
