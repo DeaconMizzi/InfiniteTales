@@ -2,182 +2,26 @@
     include 'includes/header.php';
 ?>
   <section id="books">
-    <h2 style="text-align:center;color: white;text-decoration:underline white;">Best Sellers</h2> 
+    <h2 style="text-align:center;color: white;text-decoration:underline white;">Latest Releases</h2> 
     <br>
     <div class="book-list">
-      <div class="card" style="width: 20rem;">
-      <a class="nav-link" href="content.php"><img src="img\mp.jpg" class="card-img-top" alt="... " style = "height:30rem;"></a>
-      <div class="card-body" style="text-align:center">
-        <h5 class="card-title">Friends, Lovers and the Big Terrible Thing: ''Funny, fascinating and compelling'' The Times</h5>
-        <p class="card-text">The beloved star of Friends takes us behind the scenes of the hit sitcom and his struggles with addiction in this candid, funny, and revelatory memoir that delivers a powerful message of hope and persistence.</p>
-        <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star"></span>
-          <span class="fa fa-star"></span>
-          <br>
-        <a href="#" class="btn btn-primary"><img src="img\wish.png" alt="Logo" width="20" height="20"></a>
-        <a href="#" class="btn btn-primary">Add To Cart</a>
-      </div>
-      </div>
-      <div class="card" style="width: 20rem;">
-      <img src="img\hp1.png" class="card-img-top" alt="..." style = "height:30rem;">
-      <div class="card-body" style="text-align:center">
-        <h5 class="card-title">Harry Potter and the Prisoner of Azkaban: MinaLima Edition</h5>
-        <p class="card-text">Return to Hogwarts in this stunning edition of Harry Potter and the Prisoner of Azkaban. 
-          J.K. Rowlings complete and unabridged text is accompanied by full-colour illustrations on nearly every page and eight paper-engineered interactive elements. 
-          </p>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star"></span>
-          <span class="fa fa-star"></span>
-          <br>
-          <a href="#" class="btn btn-primary"><img src="img\wish.png" alt="Logo" width="20" height="20"></a>
-        <a href="#" class="btn btn-primary">Add To Cart</a>
-      </div>
-      </div>
-      <div class="card" style="width: 20rem;">
-      <img src="img\ironflame.jpg" class="card-img-top" alt="..." style = "height:30rem;">
-      <div class="card-body" style="text-align:center">
-        <h5 class="card-title">Iron Flame: THE THRILLING SEQUEL TO THE NUMBER ONE GLOBAL BESTSELLING PHENOMENON FOURTH WING</h5>
-        <p class="card-text">From the INSTANT SUNDAY TIMES BESTELLING author, Rebecca Yarros, comes the eagerly anticipated sequel to TIKTOK SENSATION and RADIO TWO BOOK CLUB pick Fourth Wing . . .
-        </p>
-        <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star"></span>
-          <span class="fa fa-star"></span>
-          <br>
-        <a href="#" class="btn btn-primary"><img src="img\wish.png" alt="Logo" width="20" height="20"></a>
-        <a href="#" class="btn btn-primary">Add To Cart</a>
-      </div>
-      </div>
-      <div class="card" style="width: 20rem;">
-      <img src="img\hp2.jpg" class="card-img-top" alt="..." style = "height:30rem;">
-      <div class="card-body" style="text-align:center">
-        <h5 class="card-title">Harry Potter and the Philosophers Stone: MinaLima Edition</h5>
-        <p class="card-text">An irresistible new edition of Harry Potter and the Philosophers Stone created with ultra-talented designers MinaLima, the design magicians behind the gorgeous visual graphic style of the Harry Potter and Fantastic Beasts films.
-        </p>
-        <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star"></span>
-          <span class="fa fa-star"></span>
-          <br>
-        <a href="#" class="btn btn-primary"><img src="img\wish.png" alt="Logo" width="20" height="20"></a>
-        <a href="#" class="btn btn-primary">Add To Cart</a>
-      </div>
-      </div>
-      <div class="card" style="width: 20rem;">
-      <img src="img\ikigai.jpg" class="card-img-top" alt="..." style = "height:30rem;">
-      <div class="card-body" style="text-align:center">
-        <h5 class="card-title">Ikigai: The Japanese secret to a long and happy life</h5>
-        <p class="card-text">The people of Japan believe that everyone has an ikigai, a reason to jump out of bed each morning. And according to the residents of the Japanese island of Okinawa – the world’s longest-living people,f inding it is the key to a longer and more fulfilled life. 
-        </p>
-        <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star"></span>
-          <span class="fa fa-star"></span>
-          <br>
-        <a href="#" class="btn btn-primary"><img src="img\wish.png" alt="Logo" width="20" height="20"></a>
-        <a href="#" class="btn btn-primary">Add To Cart</a>
-      </div>
-      </div>
+          <?php
+            // Generate book cards
+            $sql = "SELECT * FROM book";
+            $result = mysqli_query($db, $sql);
 
-
+            if ($result && mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                    generateBookCard($row);
+                }
+            } else {
+                echo "No books available.";
+            }
+            ?>     
     </div>
   </section>
 
-  <section id="books">
-    <h2 style="text-align:center;color: white;text-decoration:underline white;">New Releases</h2> 
-    <br>
-    <div class="book-list">
-      <div class="card" style="width: 20rem;">
-      <a class="nav-link" href="content.php"><img src="img\mp.jpg" class="card-img-top" alt="... " style = "height:30rem;"></a>
-      <div class="card-body" style="text-align:center">
-        <h5 class="card-title">Friends, Lovers and the Big Terrible Thing: ''Funny, fascinating and compelling'' The Times</h5>
-        <p class="card-text">The beloved star of Friends takes us behind the scenes of the hit sitcom and his struggles with addiction in this candid, funny, and revelatory memoir that delivers a powerful message of hope and persistence.</p>
-        <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star"></span>
-          <span class="fa fa-star"></span>
-          <br>
-        <a href="#" class="btn btn-primary"><img src="img\wish.png" alt="Logo" width="20" height="20"></a>
-        <a href="#" class="btn btn-primary">Add To Cart</a>
-      </div>
-      </div>
-      <div class="card" style="width: 20rem;">
-      <img src="img\hp1.png" class="card-img-top" alt="..." style = "height:30rem;">
-      <div class="card-body" style="text-align:center">
-        <h5 class="card-title">Harry Potter and the Prisoner of Azkaban: MinaLima Edition</h5>
-        <p class="card-text">Return to Hogwarts in this stunning edition of Harry Potter and the Prisoner of Azkaban. 
-          J.K. Rowlings complete and unabridged text is accompanied by full-colour illustrations on nearly every page and eight paper-engineered interactive elements. 
-          </p>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star"></span>
-          <span class="fa fa-star"></span>
-          <br>
-          <a href="#" class="btn btn-primary"><img src="img\wish.png" alt="Logo" width="20" height="20"></a>
-        <a href="#" class="btn btn-primary">Add To Cart</a>
-      </div>
-      </div>
-      <div class="card" style="width: 20rem;">
-      <img src="img\ironflame.jpg" class="card-img-top" alt="..." style = "height:30rem;">
-      <div class="card-body" style="text-align:center">
-        <h5 class="card-title">Iron Flame: THE THRILLING SEQUEL TO THE NUMBER ONE GLOBAL BESTSELLING PHENOMENON FOURTH WING</h5>
-        <p class="card-text">From the INSTANT SUNDAY TIMES BESTELLING author, Rebecca Yarros, comes the eagerly anticipated sequel to TIKTOK SENSATION and RADIO TWO BOOK CLUB pick Fourth Wing . . .
-        </p>
-        <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star"></span>
-          <span class="fa fa-star"></span>
-          <br>
-        <a href="#" class="btn btn-primary"><img src="img\wish.png" alt="Logo" width="20" height="20"></a>
-        <a href="#" class="btn btn-primary">Add To Cart</a>
-      </div>
-      </div>
-      <div class="card" style="width: 20rem;">
-      <img src="img\hp2.jpg" class="card-img-top" alt="..." style = "height:30rem;">
-      <div class="card-body" style="text-align:center">
-        <h5 class="card-title">Harry Potter and the Philosophers Stone: MinaLima Edition</h5>
-        <p class="card-text">An irresistible new edition of Harry Potter and the Philosophers Stone created with ultra-talented designers MinaLima, the design magicians behind the gorgeous visual graphic style of the Harry Potter and Fantastic Beasts films.
-        </p>
-        <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star"></span>
-          <span class="fa fa-star"></span>
-          <br>
-        <a href="#" class="btn btn-primary"><img src="img\wish.png" alt="Logo" width="20" height="20"></a>
-        <a href="#" class="btn btn-primary">Add To Cart</a>
-      </div>
-      </div>
-      <div class="card" style="width: 20rem;">
-      <img src="img\ikigai.jpg" class="card-img-top" alt="..." style = "height:30rem;">
-      <div class="card-body" style="text-align:center">
-        <h5 class="card-title">Ikigai: The Japanese secret to a long and happy life</h5>
-        <p class="card-text">The people of Japan believe that everyone has an ikigai, a reason to jump out of bed each morning. And according to the residents of the Japanese island of Okinawa – the world’s longest-living people,f inding it is the key to a longer and more fulfilled life. 
-        </p>
-        <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star"></span>
-          <span class="fa fa-star"></span>
-          <br>
-        <a href="#" class="btn btn-primary"><img src="img\wish.png" alt="Logo" width="20" height="20"></a>
-        <a href="#" class="btn btn-primary">Add To Cart</a>
-      </div>
-      </div>
-
-
-    </div>
-  </section>
+  
 
 
 <?php
