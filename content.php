@@ -21,9 +21,12 @@
             echo '                <p class="text-right">';
             echo '                    <h1>$' . $selectedBook['price'] .'</h1>';
             echo '                </p>';
-            echo '                <a href="#" class="btn btn-primary"><img src="img\wish.png" alt="Logo" width="20" height="20"></a>';
+            echo '<form method="POST" action="books.php">';
+
+            echo '<button type="submit" class="btn btn-primary addToWishlist" name="add_to_wishlist">Add to Wishlist</button>';
+            echo '</form>';
             echo '                <a href="review.php" class="btn btn-primary">Review</a>';
-            echo '                <a href="#" class="btn btn-primary">Add To Cart</a>';
+            echo '                <a href="#" class="btn btn-primary name="add_to_cart">Add To Cart</a>';
             echo '            </div>';
             echo '        </div>';
             echo '';
@@ -42,8 +45,7 @@
             echo '            </div>';
             echo '        </div>';
             echo '        </div>';
-            echo '    </div>';
-            echo '</div>';
+
         } else {
             echo 'Book not found';
         }
@@ -51,7 +53,13 @@
         echo 'Book ID not provided';
     }
 ?>
+       
+    </div>
+</div>
+
 <br>
+
+
 
 <?php
     include 'includes/footer.php';

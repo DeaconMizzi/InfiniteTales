@@ -112,6 +112,9 @@ function generateBookCard($row)
     echo '</p>';
     // Your star rating code here
 
+    
+
+
     echo '<form method="POST" action="books.php">';
     echo '<input type="hidden" name="book_id" value="' . $row['bookId'] . '">';
     echo '<button type="submit" class="btn btn-primary addToWishlist" name="add_to_wishlist">Add to Wishlist</button>';
@@ -184,6 +187,41 @@ if (isset($_POST['add_to_cart'])) {
     // Redirect back to the previous page or wishlist page
     header('location: ' . $_SERVER['HTTP_REFERER']);
     exit();
+}
+
+if (isset($_POST['remove_from_cart'])) {
+    $cartId = $_POST['cart_id'];
+
+    // Perform a DELETE query to remove the item from the cart
+    $deleteQuery = "DELETE FROM cart WHERE cartId = $cartId";
+
+    if (mysqli_query($db, $deleteQuery)) {
+        // Item successfully removed from the cart
+        echo "Item removed from the cart.";
+    } else {
+        // Error occurred during removal
+        echo "Error: " . mysqli_error($your_db_connection);
+    }
+}
+
+function calculateSubtotal($db) {
+    // Fetch items from the cart
+    $cartQuery = "SELECT * FROM cart";
+    $cartResult = mysqli_query($db, $cartQuery);
+
+    // Initialize total price
+    $totalPrice = 0;
+
+    while ($cart_row = mysqli_fetch_assoc($cartResult)) {
+        // Assuming you have a 'price' column in your cart table
+        $itemPrice = $cart_row['price'];
+        $quantity = $cart_row['quantity'];
+
+        // Calculate the total price for each item and add it to the overall total
+        $totalPrice += $itemPrice * $quantity;
+    }
+
+    return $totalPrice;
 }
 
 // REGISTER USER
@@ -277,7 +315,7 @@ if (isset($_POST['update_profile'])) {
 
           if (mysqli_query($db, $update_address_query)) {
               $_SESSION['success'] = "Address updated successfully";
-              header('location: index.php');
+              header('location: user.php');
               exit();
           } else {
               echo "Error updating address: " . mysqli_error($db);

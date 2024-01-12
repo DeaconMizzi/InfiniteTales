@@ -37,7 +37,7 @@
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <h4 class="text-right">Profile Settings</h4>
                 </div>
-                <form method="post" action="server.php">
+                <form method="post" action="user.php">
                     <?php include('errors.php'); ?>
                     <div class="container">
 

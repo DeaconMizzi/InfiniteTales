@@ -12,7 +12,7 @@
 
             if ($result && mysqli_num_rows($result) > 0) {
                 while ($row = mysqli_fetch_assoc($result)) {
-                    generateBookCard($row);
+                    generateBookCard($row, $db);
                 }
             } else {
                 echo "No books available.";
