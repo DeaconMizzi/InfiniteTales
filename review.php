@@ -2,46 +2,25 @@
 include 'includes/header.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Check if the 'stars' field is set in the POST data
-    if (isset($_POST['stars'])) {
-        // Get the selected star rating
-        $selectedRating = $_POST['stars'];
+  // Check if the 'stars' field is set in the POST data
+  if (isset($_POST['stars'])) {
+      // Get the selected star rating
+      $selectedRating = $_POST['stars'];
 
-        // Check if the user is logged in (adjust the condition based on your authentication logic)
-        if (isset($_SESSION['user_id'])) {
-            // Get the current user ID from the session
-            $userId = $_SESSION['user_id'];
+      // Get the 'bookId' and 'buttonId' from the URL
+      $selectedBookId = isset($_GET['bookId']) ? $_GET['bookId'] : null;
+      $buttonId = isset($_GET['buttonId']) ? $_GET['buttonId'] : null;
 
-            // Check if the 'bookId' is set in the POST data
-            if (isset($_POST['bookId'])) {
-                // Get the 'bookId' from the POST data
-                $productId = $_POST['bookId'];
-
-                // Insert the review into the 'reviews' table
-                $insertReviewQuery = "INSERT INTO reviews (stars, user_id, product_id) VALUES (?, ?, ?)";
-                $stmt = $db->prepare($insertReviewQuery);
-
-                // Bind parameters and execute the query
-                $stmt->bind_param("iii", $selectedRating, $userId, $productId);
-                $stmt->execute();
-
-                // Close the statement (you can keep the database connection open for subsequent queries if needed)
-                $stmt->close();
-
-                // Redirect to the page you want after the review is submitted
-                header("Location: books.php");
-                exit();
-            } else {
-                // Handle the case where 'bookId' is not set in the POST data
-                // Redirect to an error page or display an error message
-                echo 'Error: Book ID is missing.';
-            }
-        } else {
-            // Handle the case where the user is not logged in
-            // Redirect to the login page or display a login prompt
-            echo 'Error: User not logged in.';
-        }
-    }
+      if ($selectedBookId && $buttonId) {
+          // Rest of your review submission code here
+      } else {
+          // Handle the case where 'bookId' or 'buttonId' is missing in the URL
+          echo 'Error: Book ID or Button ID is missing.';
+      }
+  } else {
+      // Handle the case where 'stars' is not set in the POST data
+      echo 'Error: Stars is missing.';
+  }
 }
 ?>
 

@@ -4,7 +4,7 @@
   <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom ">
     <!-- Left -->
     <div class="me-5 d-none d-lg-block">
-      <span>Footer</span>
+      <span>Copyright: Deacon Mizzi</span>
     </div>
 
 

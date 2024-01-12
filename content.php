@@ -25,7 +25,7 @@
 
             echo '<button type="submit" class="btn btn-primary addToWishlist" name="add_to_wishlist">Add to Wishlist</button>';
             echo '</form>';
-            echo '                <a href="review.php" class="btn btn-primary">Review</a>';
+            echo '                <a href="review.php?bookId=<?php echo $selectedBookId; ?>&buttonId=yourButtonId" class="btn btn-primary">Review </a>';
             echo '                <a href="#" class="btn btn-primary name="add_to_cart">Add To Cart</a>';
             echo '            </div>';
             echo '        </div>';

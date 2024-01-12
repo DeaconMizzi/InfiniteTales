@@ -43,6 +43,9 @@
             <label for="productName">Price:</label>
             <input type="text" id="productName" name="price"><br><br>
 
+            <label for="productName">Description:</label>
+            <input type="text" id="productName" name="description"><br><br>
+
             <input type="submit" value="Submit" name="add_product">
             </form>
             <br>

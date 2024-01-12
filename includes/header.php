@@ -10,6 +10,10 @@
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" href="fontawesome.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
     
 </head>
 <body>
@@ -62,13 +66,22 @@
                           '<a class="dropdown-item" href="signin.php">Sign In</a>';  
                        } 
                        else if(isset($_SESSION['username'])) { 
+                        $loggedInUsername = $_SESSION['username'];
+                        if($loggedInUsername === 'admin'){
                             echo ' <a class="dropdown-item" href="user.php">My Profile</a>' .
-                            '<a class="dropdown-item" href="orders.php">My Orders</a>' .
-                            '<a class="dropdown-item" href="logout.php">Sign Out</a>';
-
-                            if($_SESSION['username'] === 'admin'){
+                                '<a class="dropdown-item" href="orders.php">My Orders</a>' .
+                                '<a class="dropdown-item" href="logout.php">Sign Out</a>'.   
                             '<a class="dropdown-item" href="admin.php">Admin</a>';
                             }
+                            else{
+                                echo ' <a class="dropdown-item" href="user.php">My Profile</a>' .
+                                '<a class="dropdown-item" href="orders.php">My Orders</a>' .
+                                '<a class="dropdown-item" href="logout.php">Sign Out</a>';    
+                            }
+                            
+
+                            
+                            
                        }
                     ?>
                     
